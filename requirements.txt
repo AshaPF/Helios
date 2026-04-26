@@ -1,0 +1,14 @@
+# Helios v0.4 – requirements (Arch Linux / Hyprland, 2026)
+# Install: pip install -r requirements.txt --break-system-packages
+#
+# Arch tip: prefer pacman-managed packages where possible:
+#   sudo pacman -S python-aiohttp python-requests python-beautifulsoup4 python-selenium
+#   yay -S python-uvloop geckodriver   (or chromium + chromedriver from pacman)
+
+aiohttp>=3.10
+beautifulsoup4>=4.12
+requests>=2.32
+selenium>=4.25           # 4.25+ includes BiDi / CDP improvements and drops py3.8 support
+uvloop>=0.21             # uvloop.install() API (replaces set_event_loop_policy)
+webdriver-manager>=4.0.2 # fallback driver downloads; not needed if geckodriver/chromedriver in PATH
+lxml>=5.2                # faster BeautifulSoup parser (optional but recommended)
